@@ -6,8 +6,16 @@ var db = openDatabase({ name: 'CustomersDatabase.db' });
 const styles = StyleSheet.create({
   bigBlue: {
     marginRight: 100,
-  }
+  },
+  container: {
+    flex: 1,
+    paddingTop: 22
+   },
+   item: {
+     padding: 10
+   },
 });
+
 
 export default class HomeScreen extends Component {
 constructor(props){
@@ -80,14 +88,14 @@ constructor(props){
   render() {
     const {navigate} = this.props.navigation;
     return (
-     <View>
-        <FlatList
+     <View style={styles.container}>
+        <FlatList 
           data={this.state.FlatListItems}
           ItemSeparatorComponent={this.ListViewItemSeparator}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <TouchableWithoutFeedback onPress={ () => navigate('EditCustomer', {id: item.user_id})}>
-                  <View key={item.user_id} style={{ backgroundColor: 'white', padding: 20 }}>
+                  <View key={item.user_id} style={styles.item}>
                           <Text>Id: {item.user_id}</Text>
                           <Text>Name: {item.customer_name}</Text>
                           <Text>Contact: {item.customer_surname}</Text>
@@ -99,6 +107,7 @@ constructor(props){
         />
       </View>
     );
+  
   
     
   }
