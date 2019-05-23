@@ -4,23 +4,30 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "appium": "appium",
+    "appium:doctor": "appium-doctor"
   },
   "dependencies": {
+    "babel-preset-react-native": "^4.0.1",
     "react": "16.8.3",
     "react-native": "0.59.8",
     "react-native-gesture-handler": "^1.2.1",
     "react-native-sqlite-storage": "^3.3.10",
     "react-navigation": "^3.11.0",
-    "react-navigation-backhandler": "^1.3.2"
+    "react-navigation-backhandler": "^1.3.2",
+    "wd": "^1.11.2"
   },
   "devDependencies": {
     "@babel/core": "7.4.5",
     "@babel/runtime": "7.4.5",
+    "appium": "^1.6.5",
+    "appium-doctor": "^1.4.3",
     "babel-jest": "24.8.0",
-    "jest": "24.8.0",
+    "jest": "^24.8.0",
     "metro-react-native-babel-preset": "0.54.1",
-    "react-test-renderer": "16.8.3"
+    "react-test-renderer": "16.8.3",
+    "riteway": "^6.0.3"
   },
   "jest": {
     "preset": "react-native"
