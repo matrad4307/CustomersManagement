@@ -6,11 +6,11 @@ import MyButton from './components/MyButton';
 import { openDatabase } from 'react-native-sqlite-storage';
 var db = openDatabase({ name: 'CustomersDatabase.db' });
 
+
 export default class EditCustomer extends React.Component {
   constructor(props) {
     super(props);
     const id = props.navigation.getParam('id', 'nothing sent')
-    console.log('Results id',id);
 
     this.state = {
       user_id: id,
@@ -52,8 +52,6 @@ export default class EditCustomer extends React.Component {
           }
         );
       });
-
-
   }
 
   updateUser = () => {
@@ -78,7 +76,9 @@ export default class EditCustomer extends React.Component {
                           {
                             text: 'Ok',
                             onPress: () =>
+                         //   BackHandler.exitApp()
                               that.props.navigation.navigate('HomeScreen'),
+                              
                           },
                         ],
                         { cancelable: false }
@@ -93,8 +93,6 @@ export default class EditCustomer extends React.Component {
       alert('Please fill Name');
     }
   };
-
-
 
   removeUser = () => {
     var that = this;
